@@ -1,0 +1,79 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd5a5mkggjc2y"]
+
+[ext_resource type="Script" path="res://scenes/painel_admin.gd" id="1_2f5ca"]
+[ext_resource type="Theme" uid="uid://cjw2wai33igwn" path="res://assets/themes/desktop_theme.tres" id="1_gu3ju"]
+
+[node name="AdminPanel" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2f5ca")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 16
+columns = 2
+
+[node name="Control" type="Control" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][font_size=42]PAINEL ADMINISTRATIVO"
+fit_content = true
+
+[node name="Label2" type="Label" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Duração do QR Code:"
+
+[node name="QRLifetime" type="SpinBox" parent="MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_gu3ju")
+min_value = 10.0
+max_value = 99999.0
+value = 60.0
+suffix = "s"
+
+[node name="Label3" type="Label" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Domínio (URL)"
+
+[node name="DomainURI" type="LineEdit" parent="MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_gu3ju")
+placeholder_text = "www.google.com"
+
+[node name="Label" type="Label" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Relatório:"
+
+[node name="Button" type="Button" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_gu3ju")
+text = "Emitir Relatório"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[connection signal="gui_input" from="MarginContainer/GridContainer/QRLifetime" to="." method="_on_qr_lifetime_input"]
+[connection signal="value_changed" from="MarginContainer/GridContainer/QRLifetime" to="." method="_on_spin_box_value_changed"]
+[connection signal="text_submitted" from="MarginContainer/GridContainer/DomainURI" to="." method="_on_domain_uri_text_submitted"]
+[connection signal="pressed" from="MarginContainer/GridContainer/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,84 @@
+{
+	"categories": [
+		{
+			"uuid": "f20c90d3-fbaa-4755-bc0b-5592d8efabf1",
+			"title": "Task",
+			"color": "42c2ff"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "34fc721e-3291-4534-8a9d-54a695daae93",
+			"title": "Todo",
+			"tasks": [
+				"2987b8da-d2a1-4541-b7af-d911429b7235",
+				"482e036b-32d8-47a5-9749-304060cfd7c5",
+				"b365303d-5dd6-49da-abfd-60531cdc641e"
+			]
+		},
+		{
+			"uuid": "3ef9b1ac-1aed-4c81-967e-f42783748426",
+			"title": "Doing",
+			"tasks": [
+				"5bcad5aa-bcdc-4e03-af1e-1e11a08b9435"
+			]
+		},
+		{
+			"uuid": "b51bb6f5-e960-4c70-b8a1-ea02a3da1cde",
+			"title": "Done",
+			"tasks": [
+				"c6ea3bdd-766f-4a31-a6a5-a834bd163442"
+			]
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "c6ea3bdd-766f-4a31-a6a5-a834bd163442",
+			"title": "Gerar Codigo QR",
+			"description": "",
+			"category": "f20c90d3-fbaa-4755-bc0b-5592d8efabf1",
+			"steps": []
+		},
+		{
+			"uuid": "2987b8da-d2a1-4541-b7af-d911429b7235",
+			"title": "Conectar ao MongoDB (C#)",
+			"description": "",
+			"category": "f20c90d3-fbaa-4755-bc0b-5592d8efabf1",
+			"steps": []
+		},
+		{
+			"uuid": "482e036b-32d8-47a5-9749-304060cfd7c5",
+			"title": "Verificar se já há um registro",
+			"description": "",
+			"category": "f20c90d3-fbaa-4755-bc0b-5592d8efabf1",
+			"steps": []
+		},
+		{
+			"uuid": "5bcad5aa-bcdc-4e03-af1e-1e11a08b9435",
+			"title": "QR Code leva a uma URL para um site de verificação",
+			"description": "No site, enviar dados do dispositivo para o banco de dados.",
+			"category": "f20c90d3-fbaa-4755-bc0b-5592d8efabf1",
+			"steps": []
+		},
+		{
+			"uuid": "b365303d-5dd6-49da-abfd-60531cdc641e",
+			"title": "Estudar HTTPRequest",
+			"description": "Para que o Godot pergunte ao site se é primeiro acesso, ou se o registro de ponto foi um sucesso, e dar feedback",
+			"category": "f20c90d3-fbaa-4755-bc0b-5592d8efabf1",
+			"steps": []
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"34fc721e-3291-4534-8a9d-54a695daae93"
+			],
+			[
+				"3ef9b1ac-1aed-4c81-967e-f42783748426"
+			],
+			[
+				"b51bb6f5-e960-4c70-b8a1-ea02a3da1cde"
+			]
+		]
+	}
+}
