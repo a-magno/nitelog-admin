@@ -65,7 +65,7 @@ func _on_qr_refresh_timeout():
 	if not %QRCodeRect.visible:
 		return
 	update_qr_code()
-	qr_refresh.wait_time = Global.QR_LIFETIME
+	set_qr_time(Global.QR_LIFETIME)
 	qr_refresh.start(Global.QR_LIFETIME)
 
 func _on_close_pressed():
@@ -87,6 +87,9 @@ func _on_options_toggled(toggled_on):
 	else:
 		%AdminPanel.hide()
 
-
 func _on_open_qr_toggled(toggled_on):
 	%"QR Code".visible = toggled_on
+
+func set_qr_time(time):
+	qr_refresh.wait_time = time
+	time_left.max_value = time
