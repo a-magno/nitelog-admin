@@ -51,8 +51,6 @@ func check_attendance_list():
 		var new_url = Global.DOMAIN_URI+"?activeCode="+str(Global.active_list_data["activeCode"])
 		_set_qr_data(new_url)
 
-	Firebase.Auth.logout()
-
 func create_atendance_list(date_string : String):
 	var list = AttendanceList.new(date_string, str(generate_qr_code()) )
 	var r = await Global.save_to_database(Global.ATTENDANCE_COLLECTION_ID, list.date, list.get_data())

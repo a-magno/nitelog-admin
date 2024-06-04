@@ -84,9 +84,9 @@ func query_database( collection : String, filter : Dictionary = {}, limit := 1 )
 		
 		var r : Array = await Firebase.Firestore.query(query).result_query
 		results.push_back(r)
-	if limit < 2:
-		return results[0]
-	return results
+	
+	check_and_delete_anon()
+	return results[0]
 
 func save_to_database( collection_id : String, doc_id : String, data : Dictionary ):
 	var auth = Firebase.Auth.auth
@@ -101,3 +101,10 @@ func load_from_database( collection_id : String ):
 		var task: FirestoreTask = collection.get_doc(auth.localid)
 		var finished_task : FirestoreTask = await task.task_finished
 		var document = finished_task.document
+
+func check_and_delete_anon():
+	var is_anon = Firebase.Auth.auth_request_type == FirebaseAuth.Auth_Type.LOGIN_ANON
+	if is_anon:
+		Firebase.Auth.delete_user_account()
+	else:
+		Firebase.Auth.logout()
