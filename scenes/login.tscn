@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/Authentication.gd" id="1_0dp8h"]
 [ext_resource type="FontFile" uid="uid://de0ucb018os4" path="res://assets/fonts/Lato-Regular.ttf" id="2_dhuos"]
 [ext_resource type="StyleBox" uid="uid://ci8ck4w1l2pac" path="res://assets/styles/lineedit.tres" id="2_sf82m"]
-[ext_resource type="Theme" uid="uid://cjw2wai33igwn" path="res://assets/themes/desktop_theme.tres" id="4_7ecg6"]
+
 [ext_resource type="FontFile" uid="uid://cakik77q10q3j" path="res://assets/fonts/Lato-Bold.ttf" id="4_a5hqb"]
 [ext_resource type="StyleBox" uid="uid://bg0t3fu5mvrjy" path="res://assets/styles/btn_press.tres" id="5_50cdo"]
 
@@ -25,12 +25,12 @@ size_flags_vertical = 0
 custom_minimum_size = Vector2(0, 192)
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("4_7ecg6")
+
 tab_alignment = 2
 
 [node name="Login" type="TabBar" parent="VBoxContainer/TabContainer"]
 layout_mode = 2
-theme = ExtResource("4_7ecg6")
+
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/Login"]
 layout_mode = 1
@@ -64,7 +64,7 @@ layout_mode = 2
 [node name="LoginBtn" type="Button" parent="VBoxContainer/TabContainer/Login/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("4_7ecg6")
+
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_a5hqb")
 text = "Fazer Login"
@@ -72,7 +72,7 @@ text = "Fazer Login"
 [node name="Cadastre-se" type="TabBar" parent="VBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
-theme = ExtResource("4_7ecg6")
+
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/Cadastre-se"]
 layout_mode = 1
@@ -109,7 +109,7 @@ secret = true
 [node name="SignupBtn" type="Button" parent="VBoxContainer/TabContainer/Cadastre-se/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("4_7ecg6")
+
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_a5hqb")
 theme_override_styles/pressed = ExtResource("5_50cdo")

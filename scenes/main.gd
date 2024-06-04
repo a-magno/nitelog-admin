@@ -48,7 +48,6 @@ func check_attendance_list():
 		create_atendance_list(str(current_date))
 	else:
 		Global.active_list_data = has_list[0]["doc_fields"]
-		print(Global.active_list_data)
 		var new_url = Global.DOMAIN_URI+"?activeCode="+str(Global.active_list_data["activeCode"])
 		_set_qr_data(new_url)
 

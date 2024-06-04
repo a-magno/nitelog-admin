@@ -31,7 +31,7 @@ func _process(delta):
 
 func _get_test_data():
 	#var auth = Firebase.Auth.auth
-	var current_date = "2024-05-31"
+	var current_date = Time.get_date_string_from_system()
 	#if auth.localid:
 	var data = await Global.query_database(Global.ATTENDANCE_COLLECTION_ID, {"listDate":current_date})
 	return data[0]["doc_fields"]

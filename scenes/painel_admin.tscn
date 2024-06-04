@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dd5a5mkggjc2y"]
+[gd_scene load_steps=2 format=3 uid="uid://dd5a5mkggjc2y"]
 
 [ext_resource type="Script" path="res://scenes/painel_admin.gd" id="1_2f5ca"]
-[ext_resource type="Theme" uid="uid://cjw2wai33igwn" path="res://assets/themes/desktop_theme.tres" id="1_gu3ju"]
 
 [node name="AdminPanel" type="PanelContainer"]
 anchors_preset = 15
@@ -41,7 +40,6 @@ text = "Duração do QR Code:"
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("1_gu3ju")
 min_value = 10.0
 max_value = 99999.0
 value = 60.0
@@ -55,7 +53,6 @@ text = "Domínio (URL)"
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("1_gu3ju")
 placeholder_text = "www.google.com"
 
 [node name="Label" type="Label" parent="MarginContainer/GridContainer"]
@@ -65,7 +62,6 @@ text = "Relatório:"
 [node name="Button" type="Button" parent="MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("1_gu3ju")
 text = "Emitir Relatório"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]

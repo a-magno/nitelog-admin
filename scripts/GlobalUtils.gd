@@ -70,7 +70,6 @@ func register_user( user : User, user_password ):
 	Firebase.Auth.signup_with_email_and_password(user.email, user_password)
 	var localid = Firebase.Auth.auth.localid
 	user.userId = localid
-	print(user.get_data())
 	save_to_database( USER_COLLECTION_ID, localid, user.get_data() )
 
 func query_database( collection : String, filter : Dictionary = {}, limit := 1 ) -> Array:
