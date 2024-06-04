@@ -72,10 +72,10 @@ func _on_close_pressed():
 	get_tree().quit()
 
 func update_qr_code():
-
+	var current_date = Time.get_date_string_from_system()
 	var new_code = generate_qr_code()
 	var collection: FirestoreCollection = await Firebase.Firestore.collection(Global.ATTENDANCE_COLLECTION_ID)
-	var task : FirestoreTask = await collection.update(Global.active_list_data["listDate"], {"activeCode":new_code})
+	var task : FirestoreTask = await collection.update(current_date, {"activeCode":new_code})
 
 func _on_logout_pressed():
 	Firebase.Auth.logout()

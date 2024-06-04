@@ -1,6 +1,6 @@
 extends Node
 
-const CONFIG_ENCRYPT_PASS := "N!te2024"
+const CONFIG_ENCRYPT_PASS := ""
 
 var active_list_data : Dictionary
 
