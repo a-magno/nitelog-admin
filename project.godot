@@ -11,9 +11,10 @@ config_version=5
 [application]
 
 config/name="NITELog"
+config/version="1.1"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://assets/icons/nite.png"
 
 [autoload]
 
@@ -24,7 +25,6 @@ Notifications="*res://scripts/Notifications.gd"
 [display]
 
 window/size/mode=2
-window/size/borderless=true
 
 [dotnet]
 
