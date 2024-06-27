@@ -53,7 +53,9 @@ func check_attendance_list():
 
 func create_atendance_list(date_string : String):
 	var list = AttendanceList.new(date_string, str(generate_qr_code()) )
-	var r = await Global.save_to_database(Global.ATTENDANCE_COLLECTION_ID, list.date, list.get_data())
+	var collection : FirestoreCollection = await Firebase.Firestore.collection(Global.ATTENDANCE_COLLECTION_ID)
+	var task : FirestoreTask = await collection.add( list.date, list.get_data() )
+	#var r = await Global.save_to_database(Global.ATTENDANCE_COLLECTION_ID, list.date, )
 	
 #endregion
 #region Signal Functions
@@ -86,6 +88,7 @@ func _on_options_toggled(toggled_on):
 
 func _on_open_qr_toggled(toggled_on):
 	%"QR Code".visible = toggled_on
+	%Authentication.visible = not toggled_on
 
 func set_qr_time(time):
 	qr_refresh.wait_time = time

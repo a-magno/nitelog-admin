@@ -91,8 +91,8 @@ func query_database( collection : String, filter : Dictionary = {}, limit := 1 )
 func save_to_database( collection_id : String, doc_id : String, data : Dictionary ):
 	var auth = Firebase.Auth.auth
 	if auth:
-		var collection : FirestoreCollection = Firebase.Firestore.collection(collection_id)
-		var task : FirestoreTask = collection.add( doc_id, data )
+		var collection : FirestoreCollection = await Firebase.Firestore.collection(collection_id)
+		var task : FirestoreTask = await collection.add( doc_id, data )
 
 func load_from_database( collection_id : String ):
 	var auth = Firebase.Auth.auth
